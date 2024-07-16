@@ -60,17 +60,26 @@ class Rabbit{
     }
 }
 
+let mouseDown = false;
+
 let fpscount = 0;
 
-window.onclick = () => {
-    for (let i = 0; i < 100; i++){
-        rabbits.push(new Rabbit())
-    }
-}
+document.body.onmousedown = function() {
+    mouseDown = true;
+  }
+  document.body.onmouseup = function() {
+    mouseDown = false;
+  }
 
 function loop(){
     let start_time = new Date().getTime();
     ctx.clearRect(0, 0, width, height);
+
+    if (mouseDown){
+        for (let i = 0; i < 100; i++){
+            rabbits.push(new Rabbit())
+        }
+    }
     
     for (let i = 0; i < rabbits.length; i++){
         let rabbit = rabbits[i];
@@ -81,8 +90,8 @@ function loop(){
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, 140, 60);
     ctx.fillStyle = 'cyan';
-    ctx.fillText("FPS: " + fpscount.toString(), 20, 20);
-    ctx.fillText("Rabbits: " + rabbits.length.toString(), 20, 50);
+    ctx.fillText("FPS: " + fpscount.toString(), 10, 20);
+    ctx.fillText("Rabbits: " + rabbits.length.toString(), 10, 50);
     setTimeout(() => {
         requestAnimationFrame(loop);
         let end_time = new Date().getTime();
