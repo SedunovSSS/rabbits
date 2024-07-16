@@ -26,6 +26,7 @@ function round(num){
   return Math.round((num + Number.EPSILON) * 100) / 100
 }
 
+
 class Rabbit{
     constructor(){
         this.x = randint(width * 0.25, width * 0.75);
