@@ -16,7 +16,7 @@ rabbit_image.src = 'src/img/rabbit.png'
 let rabbit_speed = 5;
 let rabbits = [];
 
-let fps = 60;
+let fps = 120;
 
 function randint(start, end){
     return parseInt(Math.random() * (end - start) + start)
