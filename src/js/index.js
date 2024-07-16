@@ -78,7 +78,9 @@ function loop(){
         rabbit.move();
     }
     ctx.font = "16px bold serif";
-    ctx.fillStyle = 'cyan'
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, 140, 60);
+    ctx.fillStyle = 'cyan';
     ctx.fillText("FPS: " + fpscount.toString(), 20, 20);
     ctx.fillText("Rabbits: " + rabbits.length.toString(), 20, 50);
     setTimeout(() => {
