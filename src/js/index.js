@@ -64,6 +64,19 @@ let mouseDown = false;
 
 let fpscount = 0;
 
+let isTouchDevice = 'ontouchstart' in document.documentElement;
+
+$("#touchSensitive").mousedown(function(event) {
+    if (isTouchDevice) {   
+        mouseDown = true;
+    }
+});
+$("#touchSensitive").mouseup(function(event) {
+    if (isTouchDevice) {   
+        mouseDown = false;
+    }
+});
+
 document.body.onmousedown = function() {
     mouseDown = true;
   }
